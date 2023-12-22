@@ -4,7 +4,7 @@
 import { Sheet, SheetProps } from "@mui/joy";
 import { Navigation } from "./navigation";
 
-const width = 260;
+const width = 300;
 
 export function Sidebar(props: SidebarProps): JSX.Element {
   const { sx, ...other } = props;

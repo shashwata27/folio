@@ -29,13 +29,13 @@ export const Navigation = memo(function Navigation(
       role="navigation"
       {...other}
     >
-      <NavItem path="/dashboard" label="Dashboard" icon={<Dashboard />} />
+      <NavItem path="/introduction" label="Introduction" icon={<Dashboard />} />
       <NavItem
-        path="/tasks"
-        label="Tasks"
+        path="/experience"
+        label="Experience"
         icon={<AssignmentTurnedInRounded />}
       />
-      <NavItem path="/messages" label="Messages" icon={<ChatRounded />} />
+      <NavItem path="/education" label="Education" icon={<ChatRounded />} />
     </List>
   );
 });
