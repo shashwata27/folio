@@ -1,6 +1,3 @@
-/* SPDX-FileCopyrightText: 2014-present Kriasoft */
-/* SPDX-License-Identifier: MIT */
-
 declare module "__STATIC_CONTENT_MANIFEST" {
   const JSON: string;
   export default JSON;

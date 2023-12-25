@@ -1,6 +1,3 @@
-/* SPDX-FileCopyrightText: 2014-present Kriasoft */
-/* SPDX-License-Identifier: MIT */
-
 import { execa } from "execa";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

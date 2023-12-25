@@ -1,6 +1,3 @@
-/* SPDX-FileCopyrightText: 2014-present Kriasoft */
-/* SPDX-License-Identifier: MIT */
-
 import { SvgIcon, SvgIconProps } from "@mui/joy";
 
 export function FacebookIcon(props: FacebookIconProps): JSX.Element {

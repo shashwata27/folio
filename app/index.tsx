@@ -1,6 +1,3 @@
-/* SPDX-FileCopyrightText: 2014-present Kriasoft */
-/* SPDX-License-Identifier: MIT */
-
 import { CssBaseline, CssVarsProvider } from "@mui/joy";
 import { SnackbarProvider } from "notistack";
 import { StrictMode } from "react";

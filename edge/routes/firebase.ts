@@ -1,6 +1,3 @@
-/* SPDX-FileCopyrightText: 2014-present Kriasoft */
-/* SPDX-License-Identifier: MIT */
-
 import { app } from "../core/app";
 
 export const handler = app.use("/__/*", async ({ req, env }) => {

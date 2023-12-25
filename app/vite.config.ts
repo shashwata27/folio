@@ -1,6 +1,3 @@
-/* SPDX-FileCopyrightText: 2014-present Kriasoft */
-/* SPDX-License-Identifier: MIT */
-
 import react from "@vitejs/plugin-react";
 import { URL, fileURLToPath } from "node:url";
 import { loadEnv } from "vite";

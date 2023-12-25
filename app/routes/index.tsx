@@ -1,6 +1,3 @@
-/* SPDX-FileCopyrightText: 2014-present Kriasoft */
-/* SPDX-License-Identifier: MIT */
-
 import { createElement } from "react";
 import {
   createBrowserRouter,
@@ -30,8 +27,8 @@ export const router = createBrowserRouter([
     errorElement: <RootError />,
     children: [
       { index: true, element: <Navigate to="/introduction" replace /> },
-      { path: "introduction", lazy: () => import("./dashboard") },
-      { path: "experience", lazy: () => import("./tasks") },
+      { path: "introduction", lazy: () => import("./Introduction") },
+      { path: "experience", lazy: () => import("./Experience") },
       { path: "education", lazy: () => import("./messages") },
     ],
   },

@@ -1,6 +1,3 @@
-/* SPDX-FileCopyrightText: 2014-present Kriasoft */
-/* SPDX-License-Identifier: MIT */
-
 import { app } from "../core/app.js";
 
 // Rewrite HTTP requests starting with "/api/"

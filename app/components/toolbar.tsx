@@ -1,6 +1,3 @@
-/* SPDX-FileCopyrightText: 2014-present Kriasoft */
-/* SPDX-License-Identifier: MIT */
-
 import { ExpandMoreRounded, NotificationsRounded } from "@mui/icons-material";
 import { Box, BoxProps, Button, IconButton } from "@mui/joy";
 import { Fragment, Suspense } from "react";

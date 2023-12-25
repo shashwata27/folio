@@ -1,6 +1,3 @@
-/* SPDX-FileCopyrightText: 2014-present Kriasoft */
-/* SPDX-License-Identifier: MIT */
-
 import { configDotenv } from "dotenv";
 import { template } from "lodash-es";
 import { readFileSync } from "node:fs";

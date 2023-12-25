@@ -1,6 +1,3 @@
-/* SPDX-FileCopyrightText: 2014-present Kriasoft */
-/* SPDX-License-Identifier: MIT */
-
 import { execa } from "execa";
 import getPort, { portNumbers } from "get-port";
 import { debounce } from "lodash-es";
