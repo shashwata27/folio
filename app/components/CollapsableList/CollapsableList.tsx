@@ -7,12 +7,15 @@ import IconButton from "@mui/joy/IconButton";
 import Typography from "@mui/joy/Typography";
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 
-export default function CollapsibleList({ details }: CollapsableListProps) {
+export default function CollapsibleList({
+  punchLine,
+  details,
+}: CollapsableListProps) {
   const [open, setOpen] = React.useState(false);
   return (
     <Box
       sx={{
-        width: 320,
+        width: "100%",
         pl: "24px",
       }}
     >
@@ -73,7 +76,7 @@ export default function CollapsibleList({ details }: CollapsableListProps) {
                 color: open ? "text.primary" : "inherit",
               }}
             >
-              Tutorial
+              {punchLine}
             </Typography>
           </ListItem>
           {open && (
@@ -83,22 +86,6 @@ export default function CollapsibleList({ details }: CollapsableListProps) {
                   <ListItemButton>{detail}</ListItemButton>
                 </ListItem>
               ))}
-              {/*<ListItem>*/}
-              {/*  <ListItemButton>Overview</ListItemButton>*/}
-              {/*</ListItem>*/}
-              {/*<ListItem>*/}
-              {/*  <ListItemButton>*/}
-              {/*    0. Set Up Your Development Environment*/}
-              {/*  </ListItemButton>*/}
-              {/*</ListItem>*/}
-              {/*<ListItem>*/}
-              {/*  <ListItemButton>*/}
-              {/*    1. Create and Deploy Your First Gatsby Site*/}
-              {/*  </ListItemButton>*/}
-              {/*</ListItem>*/}
-              {/*<ListItem>*/}
-              {/*  <ListItemButton>2. Use and Style React components</ListItemButton>*/}
-              {/*</ListItem>*/}
             </List>
           )}
         </ListItem>
@@ -108,5 +95,6 @@ export default function CollapsibleList({ details }: CollapsableListProps) {
 }
 
 type CollapsableListProps = {
+  punchLine: string;
   details: string[];
 };

@@ -1,62 +1,114 @@
-import { Container, Step, StepIndicator, Stepper, Typography } from "@mui/joy";
+import { Container, Stepper, Typography } from "@mui/joy";
 import { usePageEffect } from "../core/page";
 import CollapsibleList from "../components/CollapsableList/CollapsableList";
-import { thoughtworksExperienceData } from "../data/experience-data";
+import {
+  cognizantExperienceData,
+  nichesolvExperienceData,
+  thoughtworksExperienceData,
+} from "../data/experience-data";
+import StyledStep from "../components/StyledStep/StyledStep";
 
 export const Component = function Experience(): JSX.Element {
   usePageEffect({ title: "Experience" });
 
   return (
-    <Container sx={{ py: 2 }}>
+    <Container sx={{ py: 2, maxHeight: "90vh", overflow: "auto" }}>
       <Typography sx={{ mb: 4 }} level="h1" gutterBottom>
         Experience
       </Typography>
-      <Typography level="h3">Thoughtworks</Typography>
+      <Typography level="h3" sx={{ mb: 1 }}>
+        Thoughtworks
+      </Typography>
       <Stepper orientation={"vertical"}>
-        <Step
-          sx={{
-            "&::after": {
-              height: 2,
-              borderRadius: "24px",
-              background:
-                "linear-gradient(to right, #002f61, #00507b, #006e8e, #008b98, #00a79c)",
-            },
-          }}
-          indicator={
-            <StepIndicator variant="solid" color="primary">
-              Now
-            </StepIndicator>
-          }
-        >
-          <Typography level="h4" gutterBottom>
+        <StyledStep>
+          <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
             Data Access Manager
           </Typography>
           <CollapsibleList
+            punchLine={
+              "Building Data Product Access Management Frontend for existing Data Products in AWS LakeFormation"
+            }
             details={thoughtworksExperienceData["DAM"]}
           ></CollapsibleList>
-        </Step>
-        <Step
-          indicator={
-            <StepIndicator variant="solid" color="primary">
-              Now
-            </StepIndicator>
-          }
-        >
-          <Typography level="h4" gutterBottom>
+        </StyledStep>
+        <StyledStep>
+          <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
             Data Product/Mesh Creater
           </Typography>
-        </Step>
-        <Step
-          indicator={
-            <StepIndicator variant="solid" color="primary">
-              Now
-            </StepIndicator>
-          }
-        >
-          <Typography level="h4" gutterBottom>
+          <CollapsibleList
+            punchLine={
+              "Fully Automated Starter Kit for Data Product creation from JSON Files"
+            }
+            details={thoughtworksExperienceData["DPMC"]}
+          ></CollapsibleList>
+        </StyledStep>
+        <StyledStep>
+          <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
             Predict Future Growth Using Data Products POC
           </Typography>
-        </Step>
+          <CollapsibleList
+            punchLine={
+              "POC for Multistage Growth Prediction among segments leveraging Data Mesh"
+            }
+            details={thoughtworksExperienceData["PFGPOC"]}
+          ></CollapsibleList>
+        </StyledStep>
+        <StyledStep>
+          <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
+            Miscellaneous
+          </Typography>
+          <CollapsibleList
+            punchLine={"Learning Explorations"}
+            details={thoughtworksExperienceData["MSC"]}
+          ></CollapsibleList>
+        </StyledStep>
+      </Stepper>
+
+      <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
+        Cognizant
+      </Typography>
+      <Stepper orientation={"vertical"}>
+        <StyledStep>
+          <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
+            Pharma CRM
+          </Typography>
+          <CollapsibleList
+            punchLine={
+              "Building CRM software to book & schedule checkins for medical procedures"
+            }
+            details={cognizantExperienceData["PCRM"]}
+          ></CollapsibleList>
+        </StyledStep>
+      </Stepper>
+
+      <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
+        NicheSolv
+      </Typography>
+      <Stepper orientation={"vertical"}>
+        <StyledStep>
+          <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
+            Dashboard Plugins, Data Scripts, UI Design
+          </Typography>
+          <CollapsibleList
+            punchLine={"UI & Data Projects"}
+            details={nichesolvExperienceData["MSC"]}
+          ></CollapsibleList>
+        </StyledStep>
+      </Stepper>
+
+      <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
+        Zero Dollar Security
+      </Typography>
+      <Stepper orientation={"vertical"}>
+        <StyledStep>
+          <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
+            Dashboard Plugins, Data Scripts, UI Design
+          </Typography>
+          <CollapsibleList
+            punchLine={"UI Design"}
+            details={nichesolvExperienceData["MSC"]}
+          ></CollapsibleList>
+        </StyledStep>
       </Stepper>
     </Container>
   );
