@@ -7,18 +7,33 @@ import {
   thoughtworksExperienceData,
 } from "../data/experience-data";
 import StyledStep from "../components/StyledStep/StyledStep";
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const Component = function Experience(): JSX.Element {
   usePageEffect({ title: "Experience" });
+  const navigate = useNavigate();
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    navigate("/experience#thoughtworks");
+  }, []);
+
+  useEffect(() => {
+    const targetElement = document.querySelector(hash);
+    targetElement!.scrollIntoView({ behavior: "smooth" });
+  }, [hash]);
 
   return (
     <Container sx={{ py: 2, maxHeight: "90vh", overflow: "auto" }}>
       <Typography sx={{ mb: 4 }} level="h1" gutterBottom>
         Experience
       </Typography>
-      <Typography level="h3" sx={{ mb: 1 }}>
-        Thoughtworks
-      </Typography>
+      <a id={"thoughtworks"} href={"#thoughtworks"}>
+        <Typography level="h3" sx={{ mb: 1 }}>
+          Thoughtworks
+        </Typography>
+      </a>
       <Stepper orientation={"vertical"}>
         <StyledStep>
           <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
@@ -64,9 +79,11 @@ export const Component = function Experience(): JSX.Element {
         </StyledStep>
       </Stepper>
 
-      <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
-        Cognizant
-      </Typography>
+      <a id={"cognizant"} href={"#cognizant"}>
+        <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
+          Cognizant
+        </Typography>
+      </a>
       <Stepper orientation={"vertical"}>
         <StyledStep>
           <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
@@ -81,9 +98,11 @@ export const Component = function Experience(): JSX.Element {
         </StyledStep>
       </Stepper>
 
-      <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
-        NicheSolv
-      </Typography>
+      <a href={"#nichesolv"} id={"nichesolv"}>
+        <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
+          NicheSolv
+        </Typography>
+      </a>
       <Stepper orientation={"vertical"}>
         <StyledStep>
           <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
@@ -96,9 +115,11 @@ export const Component = function Experience(): JSX.Element {
         </StyledStep>
       </Stepper>
 
-      <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
-        Zero Dollar Security
-      </Typography>
+      <a href="#zerodollarsecurity" id={"zerodollarsecurity"}>
+        <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
+          Zero Dollar Security
+        </Typography>
+      </a>
       <Stepper orientation={"vertical"}>
         <StyledStep>
           <Typography level="h4" sx={{ pt: 1 }} gutterBottom>

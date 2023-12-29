@@ -1,14 +1,32 @@
-import { ExpandMoreRounded, NotificationsRounded } from "@mui/icons-material";
+import { NotificationsRounded } from "@mui/icons-material";
 import { Box, BoxProps, Button, IconButton } from "@mui/joy";
 import { Fragment, Suspense } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useCurrentUser } from "../core/auth";
 import { ColorSchemeButton } from "./button-color-scheme";
 import { UserAvatarButton } from "./button-user-avatar";
+import DropDownButton from "./DropDownButton/DropDownButton";
+
+export type TPageSectionLinks = {
+  [innerKey: string]: string;
+};
+type TRouteLinks = {
+  [outerKey: string]: TPageSectionLinks;
+};
 
 export function Toolbar(props: ToolbarProps): JSX.Element {
   const { sx, ...other } = props;
-
+  const dropDownButtonLinks: TRouteLinks = {
+    "/introduction": {},
+    "/experience": {
+      Thoughtworks: "#thoughtworks",
+      Cognizant: "#cognizant",
+      Nicheslov: "#nichesolv",
+      ZDS: "#zerodollarsecurity",
+    },
+    "/education": {},
+  };
+  const location = useLocation();
   return (
     <Box
       sx={{
@@ -23,11 +41,9 @@ export function Toolbar(props: ToolbarProps): JSX.Element {
       component="header"
       {...other}
     >
-      <Button
-        color="neutral"
-        variant="plain"
-        endDecorator={<ExpandMoreRounded />}
-        children="Project Name"
+      <DropDownButton
+        title={location.pathname}
+        routeLinks={dropDownButtonLinks[location.pathname]}
       />
 
       <Box sx={{ flexGrow: 1 }} component="span" />
