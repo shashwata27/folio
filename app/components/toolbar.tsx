@@ -26,7 +26,7 @@ export function Toolbar(props: ToolbarProps): JSX.Element {
     },
     "/education": {},
   };
-  const location = useLocation();
+  const { pathname } = useLocation();
   return (
     <Box
       sx={{
@@ -42,8 +42,8 @@ export function Toolbar(props: ToolbarProps): JSX.Element {
       {...other}
     >
       <DropDownButton
-        title={location.pathname}
-        routeLinks={dropDownButtonLinks[location.pathname]}
+        title={pathname}
+        routeLinks={dropDownButtonLinks[pathname]}
       />
 
       <Box sx={{ flexGrow: 1 }} component="span" />

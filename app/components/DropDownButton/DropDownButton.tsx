@@ -13,6 +13,7 @@ export default function DropDownButton({
   return (
     <Select
       placeholder={`Select a ${title} section..`}
+      disabled={Object.keys(routeLinks).length === 0}
       indicator={<KeyboardArrowDown />}
       sx={{
         width: 300,

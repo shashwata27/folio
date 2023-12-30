@@ -10,6 +10,12 @@ import StyledStep from "../components/StyledStep/StyledStep";
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+enum EExperienceCompanies {
+  Thoughtworks = "thoughtworks",
+  Cognizant = "cognizant",
+  Nicheslov = "nichesolv",
+  ZeroDollarSecurity = "zerodollarsecurity",
+}
 export const Component = function Experience(): JSX.Element {
   usePageEffect({ title: "Experience" });
   const navigate = useNavigate();
@@ -29,7 +35,10 @@ export const Component = function Experience(): JSX.Element {
       <Typography sx={{ mb: 4 }} level="h1" gutterBottom>
         Experience
       </Typography>
-      <a id={"thoughtworks"} href={"#thoughtworks"}>
+      <a
+        id={EExperienceCompanies.Thoughtworks}
+        href={`#${EExperienceCompanies.Thoughtworks}`}
+      >
         <Typography level="h3" sx={{ mb: 1 }}>
           Thoughtworks
         </Typography>
@@ -79,7 +88,10 @@ export const Component = function Experience(): JSX.Element {
         </StyledStep>
       </Stepper>
 
-      <a id={"cognizant"} href={"#cognizant"}>
+      <a
+        id={EExperienceCompanies.Cognizant}
+        href={`#${EExperienceCompanies.Cognizant}`}
+      >
         <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
           Cognizant
         </Typography>
@@ -98,7 +110,10 @@ export const Component = function Experience(): JSX.Element {
         </StyledStep>
       </Stepper>
 
-      <a href={"#nichesolv"} id={"nichesolv"}>
+      <a
+        id={EExperienceCompanies.Nicheslov}
+        href={`#${EExperienceCompanies.Nicheslov}`}
+      >
         <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
           NicheSolv
         </Typography>
@@ -115,7 +130,10 @@ export const Component = function Experience(): JSX.Element {
         </StyledStep>
       </Stepper>
 
-      <a href="#zerodollarsecurity" id={"zerodollarsecurity"}>
+      <a
+        id={EExperienceCompanies.ZeroDollarSecurity}
+        href={`#${EExperienceCompanies.ZeroDollarSecurity}`}
+      >
         <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
           Zero Dollar Security
         </Typography>
