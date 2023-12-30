@@ -3,18 +3,26 @@ import Select, { selectClasses } from "@mui/joy/Select";
 import Option from "@mui/joy/Option";
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { TPageSectionLinks } from "../toolbar";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function DropDownButton({
   title,
   routeLinks,
 }: DropDownButtonProps) {
   const navigate = useNavigate();
+  const { hash } = useLocation();
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+
+  useEffect(() => {
+    setSelectedOption(hash);
+  }, [hash]);
   return (
     <Select
       placeholder={`Select a ${title} section..`}
       disabled={!routeLinks}
       indicator={<KeyboardArrowDown />}
+      value={selectedOption}
       sx={{
         width: 300,
         [`& .${selectClasses.indicator}`]: {
