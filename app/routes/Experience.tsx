@@ -29,12 +29,16 @@ export const Component = function Experience(): JSX.Element {
     if (hash) {
       const targetElement = document.querySelector(hash);
       targetElement!.scrollIntoView({ behavior: "smooth" });
+    } else {
+      document
+        .querySelector("#experience")!
+        .scrollIntoView({ behavior: "smooth" });
     }
   }, [hash]);
 
   return (
     <Container sx={{ py: 2, maxHeight: "90vh", overflow: "auto" }}>
-      <Typography sx={{ mb: 4 }} level="h1" gutterBottom>
+      <Typography id={"experience"} sx={{ mb: 4 }} level="h1" gutterBottom>
         Experience
       </Typography>
       <a
