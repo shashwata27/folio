@@ -13,7 +13,7 @@ export default function DropDownButton({
   return (
     <Select
       placeholder={`Select a ${title} section..`}
-      disabled={Object.keys(routeLinks).length === 0}
+      disabled={!routeLinks}
       indicator={<KeyboardArrowDown />}
       sx={{
         width: 300,
@@ -25,19 +25,24 @@ export default function DropDownButton({
         },
       }}
     >
-      {Object.entries(routeLinks).map(([nameKey, linkValue]) => (
-        <Option
-          key={`${nameKey}`}
-          value={linkValue}
-          onClick={() => {
-            navigate(`${title}${linkValue}`);
-          }}
-        >
-          {nameKey}
-        </Option>
-      ))}
+      {routeLinks
+        ? Object.entries(routeLinks).map(([nameKey, linkValue]) => (
+            <Option
+              key={`${nameKey}`}
+              value={linkValue}
+              onClick={() => {
+                navigate(`${title}${linkValue}`);
+              }}
+            >
+              {nameKey}
+            </Option>
+          ))
+        : null}
     </Select>
   );
 }
 
-type DropDownButtonProps = { title: string; routeLinks: TPageSectionLinks };
+type DropDownButtonProps = {
+  title: string;
+  routeLinks: TPageSectionLinks | null;
+};
