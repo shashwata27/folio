@@ -10,7 +10,7 @@ import StyledStep from "../components/StyledStep/StyledStep";
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-enum EExperienceCompanies {
+export enum EExperienceCompanies {
   Thoughtworks = "thoughtworks",
   Cognizant = "cognizant",
   Nicheslov = "nichesolv",
@@ -26,8 +26,10 @@ export const Component = function Experience(): JSX.Element {
   }, []);
 
   useEffect(() => {
-    const targetElement = document.querySelector(hash);
-    targetElement!.scrollIntoView({ behavior: "smooth" });
+    if (hash) {
+      const targetElement = document.querySelector(hash);
+      targetElement!.scrollIntoView({ behavior: "smooth" });
+    }
   }, [hash]);
 
   return (

@@ -22,7 +22,7 @@ export function Toolbar(props: ToolbarProps): JSX.Element {
       Thoughtworks: "#thoughtworks",
       Cognizant: "#cognizant",
       Nicheslov: "#nichesolv",
-      ZDS: "#zerodollarsecurity",
+      ZeroDollarSecurity: "#zerodollarsecurity",
     },
     "/education": {},
   };
