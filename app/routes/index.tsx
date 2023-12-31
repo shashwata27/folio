@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
       { index: true, element: <Navigate to="/introduction" replace /> },
       { path: "introduction", lazy: () => import("./Introduction") },
       { path: "experience", lazy: () => import("./Experience") },
-      { path: "education", lazy: () => import("./messages") },
+      { path: "education", lazy: () => import("./Education") },
     ],
   },
 ]);

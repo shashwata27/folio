@@ -3,12 +3,17 @@ import { usePageEffect } from "../core/page";
 import CollapsibleList from "../components/CollapsableList/CollapsableList";
 import {
   cognizantExperienceData,
+  cognizantExperienceDatesData,
   nichesolvExperienceData,
+  nichesolvExperienceDatesData,
   thoughtworksExperienceData,
+  thoughtworksExperienceDatesData,
 } from "../data/experience-data";
 import StyledStep from "../components/StyledStep/StyledStep";
 import { useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import SectionSubHeading from "../components/CustomTypographies/SectionSubHeading/SectionSubHeading";
+import SectionHeading from "../components/CustomTypographies/SectionHeading/SectionHeading";
 
 export enum EExperienceCompanies {
   Thoughtworks = "thoughtworks",
@@ -78,20 +83,17 @@ export const Component = function Experience(): JSX.Element {
         Experience
       </Typography>
 
-      <section
-        id={EExperienceCompanies.Thoughtworks}
-        style={{ minHeight: "50vh" }}
-      >
+      <section style={{ minHeight: "50vh" }}>
         <a href={`#${EExperienceCompanies.Thoughtworks}`}>
-          <Typography level="h3" sx={{ mb: 1 }}>
-            Thoughtworks
-          </Typography>
+          <SectionHeading title="Thoughtworks" />
         </a>
+        <section
+          id={EExperienceCompanies.Thoughtworks}
+          style={{ height: "0px" }}
+        ></section>
         <Stepper orientation={"vertical"}>
-          <StyledStep>
-            <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
-              Data Access Manager
-            </Typography>
+          <StyledStep indicatorDates={thoughtworksExperienceDatesData["DAM"]}>
+            <SectionSubHeading>Data Access Manager</SectionSubHeading>
             <CollapsibleList
               punchLine={
                 "Building Data Product Access Management Frontend for existing Data Products in AWS LakeFormation"
@@ -99,10 +101,10 @@ export const Component = function Experience(): JSX.Element {
               details={thoughtworksExperienceData["DAM"]}
             ></CollapsibleList>
           </StyledStep>
-          <StyledStep>
-            <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
-              Data Product/Mesh Creater
-            </Typography>
+          <StyledStep indicatorDates={thoughtworksExperienceDatesData["DPMC"]}>
+            <SectionSubHeading>
+              Data Product/Mesh Creater Pack
+            </SectionSubHeading>
             <CollapsibleList
               punchLine={
                 "Fully Automated Starter Kit for Data Product creation from JSON Files"
@@ -110,10 +112,12 @@ export const Component = function Experience(): JSX.Element {
               details={thoughtworksExperienceData["DPMC"]}
             ></CollapsibleList>
           </StyledStep>
-          <StyledStep>
-            <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
+          <StyledStep
+            indicatorDates={thoughtworksExperienceDatesData["PFGPOC"]}
+          >
+            <SectionSubHeading>
               Predict Future Growth Using Data Products POC
-            </Typography>
+            </SectionSubHeading>
             <CollapsibleList
               punchLine={
                 "POC for Multistage Growth Prediction among segments leveraging Data Mesh"
@@ -121,10 +125,8 @@ export const Component = function Experience(): JSX.Element {
               details={thoughtworksExperienceData["PFGPOC"]}
             ></CollapsibleList>
           </StyledStep>
-          <StyledStep>
-            <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
-              Miscellaneous
-            </Typography>
+          <StyledStep indicatorDates={thoughtworksExperienceDatesData["MSC"]}>
+            <SectionSubHeading>Miscellaneous</SectionSubHeading>
             <CollapsibleList
               punchLine={"Learning Explorations"}
               details={thoughtworksExperienceData["MSC"]}
@@ -138,15 +140,11 @@ export const Component = function Experience(): JSX.Element {
         style={{ minHeight: "50vh" }}
       >
         <a href={`#${EExperienceCompanies.Cognizant}`}>
-          <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
-            Cognizant
-          </Typography>
+          <SectionHeading title="Cognizant" needMarginTop />
         </a>
         <Stepper orientation={"vertical"}>
-          <StyledStep>
-            <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
-              Pharma CRM
-            </Typography>
+          <StyledStep indicatorDates={cognizantExperienceDatesData["PCRM"]}>
+            <SectionSubHeading>Pharma CRM</SectionSubHeading>
             <CollapsibleList
               punchLine={
                 "Building CRM software to book & schedule checkins for medical procedures"
@@ -162,15 +160,13 @@ export const Component = function Experience(): JSX.Element {
         style={{ minHeight: "50vh" }}
       >
         <a href={`#${EExperienceCompanies.Nicheslov}`}>
-          <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
-            NicheSolv
-          </Typography>
+          <SectionHeading title="NicheSolv" needMarginTop />
         </a>
         <Stepper orientation={"vertical"}>
-          <StyledStep>
-            <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
+          <StyledStep indicatorDates={nichesolvExperienceDatesData["MSC"]}>
+            <SectionSubHeading>
               Dashboard Plugins, Data Scripts, UI Design
-            </Typography>
+            </SectionSubHeading>
             <CollapsibleList
               punchLine={"UI & Data Projects"}
               details={nichesolvExperienceData["MSC"]}
@@ -184,15 +180,13 @@ export const Component = function Experience(): JSX.Element {
         style={{ minHeight: "50vh" }}
       >
         <a href={`#${EExperienceCompanies.ZeroDollarSecurity}`}>
-          <Typography level="h3" sx={{ mt: 6, mb: 1 }}>
-            Zero Dollar Security
-          </Typography>
+          <SectionHeading title="Zero Dollar Security" needMarginTop />
         </a>
         <Stepper orientation={"vertical"}>
           <StyledStep>
-            <Typography level="h4" sx={{ pt: 1 }} gutterBottom>
+            <SectionSubHeading>
               Dashboard Plugins, Data Scripts, UI Design
-            </Typography>
+            </SectionSubHeading>
             <CollapsibleList
               punchLine={"UI Design"}
               details={nichesolvExperienceData["MSC"]}

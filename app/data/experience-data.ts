@@ -20,6 +20,12 @@ export const thoughtworksExperienceData = {
     "Explored horizons of DevOps(Docker, Terraform, AWS) & proactively used those tools in various projects",
   ],
 };
+export const thoughtworksExperienceDatesData = {
+  DAM: { startDate: "July 2023", endDate: "Now" },
+  DPMC: { startDate: "Jan 2023", endDate: "July 2023" },
+  PFGPOC: { startDate: "Nov 2022", endDate: "Jan 2023" },
+  MSC: { startDate: "Aug 2022", endDate: "Nov 2022" },
+};
 
 export const cognizantExperienceData = {
   PCRM: [
@@ -27,10 +33,17 @@ export const cognizantExperienceData = {
     "Tech Used: Salesforce Apex, LWC, Flows",
   ],
 };
+export const cognizantExperienceDatesData = {
+  PCRM: { startDate: "Sep 2021", endDate: "jul 2022" },
+};
 
 export const nichesolvExperienceData = {
   MSC: [
     "Developed reactive UI, Grafana plugins, and Python APIs while collaborating with multiple small teams & projects",
     "Tech Used: React.js, Python Flask, Figma",
   ],
+};
+
+export const nichesolvExperienceDatesData = {
+  MSC: { startDate: "May 2021", endDate: "Sep 2021" },
 };

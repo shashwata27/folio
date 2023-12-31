@@ -11,7 +11,7 @@ export default function CollapsibleList({
   punchLine,
   details,
 }: CollapsableListProps) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   return (
     <Box
       sx={{
