@@ -1,4 +1,4 @@
-import { createStore, Provider } from "jotai";
+import { atom, createStore, Provider } from "jotai";
 import { createElement, ReactNode } from "react";
 
 /**
@@ -6,6 +6,7 @@ import { createElement, ReactNode } from "react";
  * @see https://jotai.org/
  */
 export const store = createStore();
+export const isDropDownOptionClickedAtom = atom(false);
 
 export function StoreProvider(props: StoreProviderProps): JSX.Element {
   return createElement(Provider, { store, ...props });

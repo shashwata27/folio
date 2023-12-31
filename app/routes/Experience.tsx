@@ -14,6 +14,9 @@ import { useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import SectionSubHeading from "../components/CustomTypographies/SectionSubHeading/SectionSubHeading";
 import SectionHeading from "../components/CustomTypographies/SectionHeading/SectionHeading";
+import { useStore } from "jotai";
+import { isDropDownOptionClickedAtom } from "../core/store";
+import { debounce } from "@mui/material";
 
 export enum EExperienceCompanies {
   Thoughtworks = "thoughtworks",
@@ -27,6 +30,13 @@ export const Component = function Experience(): JSX.Element {
   const { hash } = useLocation();
   const containerRef = useRef<HTMLDivElement>(null);
   const initialRender = useRef(true);
+  const store = useStore();
+
+  const debouncedNavigate = debounce((id: string) => {
+    // ensure only one navigate call will be made in 10ms
+    navigate(`/experience#${id}`);
+    store.set(isDropDownOptionClickedAtom, false);
+  }, 10);
 
   useEffect(() => {
     const options = {
@@ -39,8 +49,12 @@ export const Component = function Experience(): JSX.Element {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute("id");
-          if (id && !initialRender.current) {
-            navigate(`/experience#${id}`);
+          if (
+            id &&
+            !initialRender.current &&
+            !store.get(isDropDownOptionClickedAtom)
+          ) {
+            debouncedNavigate(id);
           }
           initialRender.current = false;
         }
