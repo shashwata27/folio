@@ -14,8 +14,6 @@ import { useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import SectionSubHeading from "../components/CustomTypographies/SectionSubHeading/SectionSubHeading";
 import SectionHeading from "../components/CustomTypographies/SectionHeading/SectionHeading";
-import { useStore } from "jotai";
-import { isDropDownOptionClickedAtom } from "../core/store";
 import { debounce } from "@mui/material";
 
 export enum EExperienceCompanies {
@@ -30,13 +28,11 @@ export const Component = function Experience(): JSX.Element {
   const { hash } = useLocation();
   const containerRef = useRef<HTMLDivElement>(null);
   const initialRender = useRef(true);
-  const store = useStore();
 
   const debouncedNavigate = debounce((id: string) => {
     // ensure only one navigate call will be made in 10ms
     navigate(`/experience#${id}`);
-    store.set(isDropDownOptionClickedAtom, false);
-  }, 10);
+  }, 500);
 
   useEffect(() => {
     const options = {
@@ -49,11 +45,7 @@ export const Component = function Experience(): JSX.Element {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute("id");
-          if (
-            id &&
-            !initialRender.current &&
-            !store.get(isDropDownOptionClickedAtom)
-          ) {
+          if (id && !initialRender.current) {
             debouncedNavigate(id);
           }
           initialRender.current = false;
@@ -97,14 +89,14 @@ export const Component = function Experience(): JSX.Element {
         Experience
       </Typography>
 
+      <section
+        id={EExperienceCompanies.Thoughtworks}
+        style={{ height: "0px" }}
+      ></section>
       <section style={{ minHeight: "50vh" }}>
         <a href={`#${EExperienceCompanies.Thoughtworks}`}>
           <SectionHeading title="Thoughtworks" />
         </a>
-        <section
-          id={EExperienceCompanies.Thoughtworks}
-          style={{ height: "0px" }}
-        ></section>
         <Stepper orientation={"vertical"}>
           <StyledStep indicatorDates={thoughtworksExperienceDatesData["DAM"]}>
             <SectionSubHeading>Data Access Manager</SectionSubHeading>

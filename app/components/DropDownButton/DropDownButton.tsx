@@ -5,8 +5,6 @@ import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { TPageSectionLinks } from "../toolbar";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useStore } from "jotai";
-import { isDropDownOptionClickedAtom } from "../../core/store";
 
 export default function DropDownButton({
   title,
@@ -14,9 +12,7 @@ export default function DropDownButton({
 }: DropDownButtonProps) {
   const navigate = useNavigate();
   const { hash } = useLocation();
-  // const [fromOptionClick, setFromOptionClick] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const store = useStore();
 
   useEffect(() => {
     setSelectedOption(hash);
@@ -44,7 +40,6 @@ export default function DropDownButton({
               value={linkValue}
               onClick={() => {
                 navigate(`${title}${linkValue}`);
-                store.set(isDropDownOptionClickedAtom, true);
               }}
             >
               {nameKey}
