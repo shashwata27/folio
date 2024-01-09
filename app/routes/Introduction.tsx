@@ -11,13 +11,23 @@ export const Component = function Introduction(): JSX.Element {
       </Typography>
 
       <Typography level="body-lg">
-        <b>Polyglot</b> Developer with expertise in analyzing business’s
-        requirements and turning to solutions by object-oriented, domain design
-        approaches.
+        <b>Polyglot Developer</b>, skilled in analyzing business needs and
       </Typography>
       <Typography level="body-lg">
         {" "}
-        Focused, results-driven & practitioner of clean code & TDD.
+        translating them into solutions through <b>object-oriented</b>,
+        <b>domain-driven design</b>.
+      </Typography>
+
+      <Typography level="body-lg">
+        {" "}
+        With <b>2+</b> years of experience able to align, and drive small teams
+        through cultivation.
+      </Typography>
+      <Typography level="body-lg">
+        {" "}
+        Focused, results-driven & practitioner of <b>clean code</b> &{" "}
+        <b>Test-Driven Development</b>.
       </Typography>
     </Container>
   );

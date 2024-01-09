@@ -21,8 +21,8 @@ export const thoughtworksExperienceData = {
   ],
 };
 export const thoughtworksExperienceDatesData = {
-  DAM: { startDate: "July 2023", endDate: "Now" },
-  DPMC: { startDate: "Jan 2023", endDate: "July 2023" },
+  DAM: { startDate: "Jul 2023", endDate: "Now" },
+  DPMC: { startDate: "Jan 2023", endDate: "Jul 2023" },
   PFGPOC: { startDate: "Nov 2022", endDate: "Jan 2023" },
   MSC: { startDate: "Aug 2022", endDate: "Nov 2022" },
 };
@@ -46,4 +46,16 @@ export const nichesolvExperienceData = {
 
 export const nichesolvExperienceDatesData = {
   MSC: { startDate: "May 2021", endDate: "Sep 2021" },
+};
+
+export const zeroDollarSecurityExperienceData = {
+  Designer: [
+    "Worked in content creation for social media",
+    "Made LOGOs for clients",
+    "Supported projects for other design needs",
+  ],
+};
+
+export const zeroDollarSecurityExperienceDatesData = {
+  Designer: { startDate: "May 2020", endDate: "Aug 2020" },
 };

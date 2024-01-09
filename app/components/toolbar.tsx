@@ -26,7 +26,8 @@ export function Toolbar(props: ToolbarProps): JSX.Element {
     },
     "/education": {
       RCCIIT: "#rcciit",
-      BidhanNagarMunicipalSchool: "#bidhanagarmunicipalschool",
+      BidhanNagarMunicipalHighSchool: "#bidhannagarmunicipalhighschool",
+      BidhanNagarMunicipalSchool: "#bidhannagarmunicipalschool",
     },
   };
   const { pathname } = useLocation();

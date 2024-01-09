@@ -8,6 +8,8 @@ import {
   nichesolvExperienceDatesData,
   thoughtworksExperienceData,
   thoughtworksExperienceDatesData,
+  zeroDollarSecurityExperienceData,
+  zeroDollarSecurityExperienceDatesData,
 } from "../data/experience-data";
 import StyledStep from "../components/StyledStep/StyledStep";
 import { useEffect, useRef } from "react";
@@ -189,13 +191,13 @@ export const Component = function Experience(): JSX.Element {
           <SectionHeading title="Zero Dollar Security" needMarginTop />
         </a>
         <Stepper orientation={"vertical"}>
-          <StyledStep>
-            <SectionSubHeading>
-              Dashboard Plugins, Data Scripts, UI Design
-            </SectionSubHeading>
+          <StyledStep
+            indicatorDates={zeroDollarSecurityExperienceDatesData["Designer"]}
+          >
+            <SectionSubHeading>Miscellaneous</SectionSubHeading>
             <CollapsibleList
-              punchLine={"UI Design"}
-              details={nichesolvExperienceData["MSC"]}
+              punchLine={"LOGOs, Social Media Content, UI Design"}
+              details={zeroDollarSecurityExperienceData["Designer"]}
             ></CollapsibleList>
           </StyledStep>
         </Stepper>
