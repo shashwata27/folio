@@ -30,6 +30,10 @@ export const router = createBrowserRouter([
       { path: "introduction", lazy: () => import("./Introduction") },
       { path: "experience", lazy: () => import("./Experience") },
       { path: "education", lazy: () => import("./Education") },
+      {
+        path: "skills-and-certificates",
+        lazy: () => import("./SkillsAndCerts"),
+      },
     ],
   },
 ]);

@@ -18,7 +18,7 @@ import SectionSubHeading from "../components/CustomTypographies/SectionSubHeadin
 import SectionHeading from "../components/CustomTypographies/SectionHeading/SectionHeading";
 import { debounce } from "@mui/material";
 
-export enum EExperienceCompanies {
+enum EExperienceCompanies {
   Thoughtworks = "thoughtworks",
   Cognizant = "cognizant",
   Nicheslov = "nichesolv",

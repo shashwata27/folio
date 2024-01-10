@@ -29,6 +29,10 @@ export function Toolbar(props: ToolbarProps): JSX.Element {
       BidhanNagarMunicipalHighSchool: "#bidhannagarmunicipalhighschool",
       BidhanNagarMunicipalSchool: "#bidhannagarmunicipalschool",
     },
+    "/skills-and-certificates": {
+      Skills: "#skills",
+      Certificates: "#certificates",
+    },
   };
   const { pathname } = useLocation();
   return (

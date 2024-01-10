@@ -33,6 +33,11 @@ export const Navigation = memo(function Navigation(
         icon={<AssignmentTurnedInRounded />}
       />
       <NavItem path="/education" label="Education" icon={<ChatRounded />} />
+      <NavItem
+        path="/skills-and-certificates"
+        label="Skills & Certs"
+        icon={<ChatRounded />}
+      />
     </List>
   );
 });
