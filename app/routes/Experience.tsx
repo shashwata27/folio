@@ -1,4 +1,4 @@
-import { Container, Stepper, Typography } from "@mui/joy";
+import { Card, Container, Stepper, Typography } from "@mui/joy";
 import { usePageEffect } from "../core/page";
 import CollapsibleList from "../components/CollapsableList/CollapsableList";
 import {
@@ -102,23 +102,27 @@ export const Component = function Experience(): JSX.Element {
         <Stepper orientation={"vertical"}>
           <StyledStep indicatorDates={thoughtworksExperienceDatesData["DAM"]}>
             <SectionSubHeading>Data Access Manager</SectionSubHeading>
-            <CollapsibleList
-              punchLine={
-                "Building Data Product Access Management Frontend for existing Data Products in AWS LakeFormation"
-              }
-              details={thoughtworksExperienceData["DAM"]}
-            ></CollapsibleList>
+            <Card variant="plain">
+              <CollapsibleList
+                punchLine={
+                  "Building Data Product Access Management Frontend for existing Data Products in AWS LakeFormation"
+                }
+                details={thoughtworksExperienceData["DAM"]}
+              ></CollapsibleList>
+            </Card>
           </StyledStep>
           <StyledStep indicatorDates={thoughtworksExperienceDatesData["DPMC"]}>
             <SectionSubHeading>
               Data Product/Mesh Creater Pack
             </SectionSubHeading>
-            <CollapsibleList
-              punchLine={
-                "Fully Automated Starter Kit for Data Product creation from JSON Files"
-              }
-              details={thoughtworksExperienceData["DPMC"]}
-            ></CollapsibleList>
+            <Card variant="plain">
+              <CollapsibleList
+                punchLine={
+                  "Fully Automated Starter Kit for Data Product creation from JSON Files"
+                }
+                details={thoughtworksExperienceData["DPMC"]}
+              ></CollapsibleList>
+            </Card>
           </StyledStep>
           <StyledStep
             indicatorDates={thoughtworksExperienceDatesData["PFGPOC"]}
@@ -126,19 +130,23 @@ export const Component = function Experience(): JSX.Element {
             <SectionSubHeading>
               Predict Future Growth Using Data Products POC
             </SectionSubHeading>
-            <CollapsibleList
-              punchLine={
-                "POC for Multistage Growth Prediction among segments leveraging Data Mesh"
-              }
-              details={thoughtworksExperienceData["PFGPOC"]}
-            ></CollapsibleList>
+            <Card variant="plain">
+              <CollapsibleList
+                punchLine={
+                  "POC for Multistage Growth Prediction among segments leveraging Data Mesh"
+                }
+                details={thoughtworksExperienceData["PFGPOC"]}
+              ></CollapsibleList>
+            </Card>
           </StyledStep>
           <StyledStep indicatorDates={thoughtworksExperienceDatesData["MSC"]}>
             <SectionSubHeading>Miscellaneous</SectionSubHeading>
-            <CollapsibleList
-              punchLine={"Learning Explorations"}
-              details={thoughtworksExperienceData["MSC"]}
-            ></CollapsibleList>
+            <Card variant="plain">
+              <CollapsibleList
+                punchLine={"Learning Explorations"}
+                details={thoughtworksExperienceData["MSC"]}
+              ></CollapsibleList>
+            </Card>
           </StyledStep>
         </Stepper>
       </section>
@@ -153,12 +161,14 @@ export const Component = function Experience(): JSX.Element {
         <Stepper orientation={"vertical"}>
           <StyledStep indicatorDates={cognizantExperienceDatesData["PCRM"]}>
             <SectionSubHeading>Pharma CRM</SectionSubHeading>
-            <CollapsibleList
-              punchLine={
-                "Building CRM software to book & schedule checkins for medical procedures"
-              }
-              details={cognizantExperienceData["PCRM"]}
-            ></CollapsibleList>
+            <Card variant="plain">
+              <CollapsibleList
+                punchLine={
+                  "Building CRM software to book & schedule checkins for medical procedures"
+                }
+                details={cognizantExperienceData["PCRM"]}
+              ></CollapsibleList>
+            </Card>
           </StyledStep>
         </Stepper>
       </section>
@@ -175,10 +185,12 @@ export const Component = function Experience(): JSX.Element {
             <SectionSubHeading>
               Dashboard Plugins, Data Scripts, UI Design
             </SectionSubHeading>
-            <CollapsibleList
-              punchLine={"UI & Data Projects"}
-              details={nichesolvExperienceData["MSC"]}
-            ></CollapsibleList>
+            <Card variant="plain">
+              <CollapsibleList
+                punchLine={"UI & Data Projects"}
+                details={nichesolvExperienceData["MSC"]}
+              ></CollapsibleList>
+            </Card>
           </StyledStep>
         </Stepper>
       </section>
@@ -195,10 +207,12 @@ export const Component = function Experience(): JSX.Element {
             indicatorDates={zeroDollarSecurityExperienceDatesData["Designer"]}
           >
             <SectionSubHeading>Miscellaneous</SectionSubHeading>
-            <CollapsibleList
-              punchLine={"LOGOs, Social Media Content, UI Design"}
-              details={zeroDollarSecurityExperienceData["Designer"]}
-            ></CollapsibleList>
+            <Card variant="plain">
+              <CollapsibleList
+                punchLine={"LOGOs, Social Media Content, UI Design"}
+                details={zeroDollarSecurityExperienceData["Designer"]}
+              ></CollapsibleList>
+            </Card>
           </StyledStep>
         </Stepper>
       </section>

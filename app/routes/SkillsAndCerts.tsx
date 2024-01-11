@@ -1,10 +1,18 @@
 import { Container, Typography } from "@mui/joy";
 import SkillCard from "../components/SkillCard/SkillCard";
+import { SkillsData } from "../data/skills-and-certificates-data";
 
 enum ESkillsAndCertificates {
   Skills = "skills",
   Certificates = "certificates",
 }
+export type TSkillGroup =
+  | "Language"
+  | "Framework"
+  | "Database"
+  | "Tool"
+  | "Technology"
+  | "Soft Skill";
 
 export const Component = function SkillsAndCerts(): JSX.Element {
   return (
@@ -26,11 +34,15 @@ export const Component = function SkillsAndCerts(): JSX.Element {
             flexWrap: "wrap",
           }}
         >
-          <SkillCard name={`React.js`} value={75} experience={2} />
-          <SkillCard name={`React.js`} value={75} experience={2} />
-          <SkillCard name={`React.js`} value={75} experience={2} />
-          <SkillCard name={`React.js`} value={75} experience={2} />
-          <SkillCard name={`React.js`} value={75} experience={2} />
+          {SkillsData.map((skill) => (
+            <SkillCard
+              cardGroup={skill.skillGroup}
+              name={skill.name}
+              value={skill.value}
+              experience={skill.experience}
+              key={skill.name}
+            />
+          ))}
         </div>
       </section>
 

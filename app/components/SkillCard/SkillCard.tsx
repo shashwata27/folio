@@ -1,10 +1,16 @@
 import StyledCard from "../StyledCard/StyledCard";
 import DonutChart from "../DonutChart/DonutChart";
-import { Typography } from "@mui/joy";
+import { Chip, Typography } from "@mui/joy";
+import { TSkillGroup } from "../../routes/SkillsAndCerts";
 
-const SkillCard = ({ name, value, experience }: SkillCardProps) => {
+const SkillCard = ({
+  name,
+  value,
+  experience: experienceValue,
+  cardGroup,
+}: SkillCardProps) => {
   return (
-    <StyledCard>
+    <StyledCard group={cardGroup}>
       <div
         style={{
           display: "flex",
@@ -21,12 +27,15 @@ const SkillCard = ({ name, value, experience }: SkillCardProps) => {
             paddingLeft: 30,
           }}
         >
-          <Typography level="h4" sx={{ textAlign: "bottom" }}>
+          <Typography
+            level={name.length > 12 ? "title-lg" : "h4"}
+            sx={{ textAlign: "bottom" }}
+          >
             {name}
           </Typography>
           <div style={{ display: "flex" }}>
             <Typography level="h1" sx={{ fontSize: 60 }}>
-              {experience}
+              {experienceValue}
             </Typography>
             <div
               style={{
@@ -40,6 +49,15 @@ const SkillCard = ({ name, value, experience }: SkillCardProps) => {
               <Typography level="body-md">+years</Typography>
             </div>
           </div>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            <Chip
+              color="neutral"
+              variant="outlined"
+              sx={{ fontSize: 10, marginRight: 0.1, marginBottom: 0.1 }}
+            >
+              {cardGroup}
+            </Chip>
+          </div>
         </div>
       </div>
     </StyledCard>
@@ -48,4 +66,9 @@ const SkillCard = ({ name, value, experience }: SkillCardProps) => {
 
 export default SkillCard;
 
-type SkillCardProps = { name: string; value: number; experience: number };
+type SkillCardProps = {
+  name: string;
+  value: number;
+  experience: number;
+  cardGroup: TSkillGroup;
+};
