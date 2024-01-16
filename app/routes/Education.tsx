@@ -10,6 +10,7 @@ import { debounce } from "@mui/material";
 import CollapsibleList from "../components/CollapsableList/CollapsableList";
 import { educationData, educationDates } from "../data/education-data";
 import MarksCard from "../components/MarksCard/MarksCard";
+import SakuraCanvas from "../animations/SakuraCanvas";
 
 export enum EEducationInstitution {
   RCCIIT = "rcciit",
@@ -79,6 +80,8 @@ export const Component = function Education(): JSX.Element {
       sx={{ py: 2, maxHeight: "90vh", overflow: "auto" }}
       ref={containerRef}
     >
+      <SakuraCanvas />
+
       <Typography id={"education"} sx={{ mb: 4 }} level="h1" gutterBottom>
         Education
       </Typography>

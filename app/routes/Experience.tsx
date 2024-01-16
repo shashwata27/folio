@@ -17,6 +17,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import SectionSubHeading from "../components/CustomTypographies/SectionSubHeading/SectionSubHeading";
 import SectionHeading from "../components/CustomTypographies/SectionHeading/SectionHeading";
 import { debounce } from "@mui/material";
+import SakuraCanvas from "../animations/SakuraCanvas";
 
 enum EExperienceCompanies {
   Thoughtworks = "thoughtworks",
@@ -87,6 +88,7 @@ export const Component = function Experience(): JSX.Element {
       sx={{ py: 2, maxHeight: "90vh", overflow: "auto" }}
       ref={containerRef}
     >
+      <SakuraCanvas />
       <Typography id={"experience"} sx={{ mb: 4 }} level="h1" gutterBottom>
         Experience
       </Typography>
