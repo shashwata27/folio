@@ -1,11 +1,14 @@
 import { Card, Container, Typography } from "@mui/joy";
 import { usePageEffect } from "../core/page";
 
+import SakuraCanvas from "../animations/SakuraCanvas";
+
 export const Component = function Introduction(): JSX.Element {
   usePageEffect({ title: "Introduction" });
 
   return (
-    <Container sx={{ py: 2 }}>
+    <Container sx={{ py: 2, overflow: "hidden" }}>
+      <SakuraCanvas />
       <Typography sx={{ mb: 4 }} level="h1">
         Introduction
       </Typography>
