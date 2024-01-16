@@ -62,7 +62,7 @@ function sakuraAnimation() {
   const petalArray: Petal[] = [];
 
   const petalImg: HTMLImageElement = new Image();
-  petalImg.src = "https://djjjk9bjm164h.cloudfront.net/petal.png";
+  petalImg.src = "./resources/petal.png";
   petalImg.addEventListener("load", () => {
     for (let i = 0; i < TOTAL; i++) {
       petalArray.push(new Petal());
