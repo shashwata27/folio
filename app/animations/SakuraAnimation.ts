@@ -16,8 +16,8 @@ function sakuraAnimation() {
       this.x = canvas.width - Math.random() * 50; // Adjust the random value as needed
       this.y = canvas.height - Math.random() * 50; // Adjust the random value as needed
 
-      this.w = 25 + Math.random() * 15;
-      this.h = 20 + Math.random() * 10;
+      this.w = 25 + Math.random() * 15 * (0.002 * this.x);
+      this.h = 20 + Math.random() * 10 * (0.002 * this.y);
       this.opacity = this.w / 40;
       this.flip = Math.random();
 
