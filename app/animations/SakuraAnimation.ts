@@ -43,11 +43,33 @@ function sakuraAnimation() {
         this.h * (0.8 + Math.abs(Math.sin(this.flip)) / 5),
       );
     }
+    checkCollision() {
+      const introductionHeading = document.querySelector("h1")!;
+      const rect = introductionHeading.getBoundingClientRect();
+      const headingX = rect.left + window.scrollX;
+      const headingY = rect.top + window.scrollY;
+
+      // Check if the petal is near the heading coordinates
+      if (
+        this.x > headingX &&
+        this.x < headingX + introductionHeading.offsetWidth &&
+        this.y > headingY &&
+        this.y < headingY + introductionHeading.offsetHeight
+      ) {
+        // Adjust the petal's movement direction towards the heading
+        const angle = Math.atan2(headingY - this.y, headingX - this.x);
+        this.xSpeed = Math.cos(angle) * 2;
+        this.ySpeed = Math.sin(angle) * 2;
+      }
+    }
 
     animate() {
       this.x -= this.xSpeed + mouseX * 5;
       this.y -= this.ySpeed + mouseX * 2;
       this.flip += this.flipSpeed;
+      if (window.innerWidth >= 2560) {
+        this.checkCollision();
+      }
       this.draw();
     }
   }

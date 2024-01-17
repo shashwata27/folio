@@ -1,10 +1,10 @@
 canvas {
   position: absolute;
-  right: 6vw;
+  top: 52px;
+  left: 300px;
   z-index: -1;
-  margin: -30px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   height: 86vh;
-  width: 72vw;
-  z-index: -1;
+  width: 80vw;
 }
