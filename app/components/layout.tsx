@@ -1,5 +1,5 @@
 import { Box, GlobalStyles } from "@mui/joy";
-import { Fragment, Suspense, useState } from "react";
+import { Fragment, Suspense, useEffect, useState } from "react";
 import { Outlet, useOutletContext } from "react-router-dom";
 import { Logo } from "./logo";
 import { Sidebar } from "./sidebar";
@@ -12,6 +12,12 @@ import { Toolbar } from "./toolbar";
 type ContextType = { openSidebar: boolean };
 export function MainLayout(): JSX.Element {
   const [openSidebar, setOpenSidebar] = useState(true);
+
+  useEffect(() => {
+    if (screen.width < 1280) {
+      setOpenSidebar(false);
+    }
+  }, []);
 
   return (
     <Fragment>
