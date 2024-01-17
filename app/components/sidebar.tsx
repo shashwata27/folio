@@ -1,10 +1,11 @@
-import { Sheet, SheetProps } from "@mui/joy";
+import { Sheet } from "@mui/joy";
 import { Navigation } from "./navigation";
 
-const width = 300;
+let width = 300;
 
 export function Sidebar(props: SidebarProps): JSX.Element {
-  const { sx, ...other } = props;
+  const { sx, openSidebar, ...other } = props;
+  openSidebar ? (width = 300) : (width = 68);
 
   return (
     <Sheet
@@ -19,9 +20,12 @@ export function Sidebar(props: SidebarProps): JSX.Element {
       aria-label="Sidebar"
       {...other}
     >
-      <Navigation />
+      <Navigation openSidebar={openSidebar} />
     </Sheet>
   );
 }
 
-export type SidebarProps = Omit<SheetProps, "children">;
+export type SidebarProps = {
+  sx: { gridArea: string };
+  openSidebar: boolean;
+};

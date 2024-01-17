@@ -2,13 +2,15 @@ import { Card, Container, Typography } from "@mui/joy";
 import { usePageEffect } from "../core/page";
 
 import SakuraCanvas from "../animations/SakuraCanvas";
+import { useOutetContext } from "../components";
 
 export const Component = function Introduction(): JSX.Element {
+  const { openSidebar } = useOutetContext();
   usePageEffect({ title: "Introduction" });
 
   return (
     <Container sx={{ py: 2, overflow: "hidden" }}>
-      <SakuraCanvas />
+      <SakuraCanvas openSidebar={openSidebar} />
       <Typography sx={{ mb: 4 }} level="h1">
         Introduction
       </Typography>

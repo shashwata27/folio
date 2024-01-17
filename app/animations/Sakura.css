@@ -1,10 +1,18 @@
 canvas {
   position: absolute;
   top: 52px;
-  left: 300px;
+
   z-index: -1;
   margin: 0;
   padding: 0;
   height: 86vh;
+}
+
+.sidebar-closed {
+  left: 68px;
+  width: 94vw;
+}
+.sidebar-open {
+  left: 300px;
   width: 80vw;
 }

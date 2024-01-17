@@ -1,6 +1,6 @@
 import { Box, GlobalStyles } from "@mui/joy";
-import { Fragment, Suspense } from "react";
-import { Outlet } from "react-router-dom";
+import { Fragment, Suspense, useState } from "react";
+import { Outlet, useOutletContext } from "react-router-dom";
 import { Logo } from "./logo";
 import { Sidebar } from "./sidebar";
 import { Toolbar } from "./toolbar";
@@ -8,7 +8,11 @@ import { Toolbar } from "./toolbar";
 /**
  * The main application layout.
  */
+
+type ContextType = { openSidebar: boolean };
 export function MainLayout(): JSX.Element {
+  const [openSidebar, setOpenSidebar] = useState(true);
+
   return (
     <Fragment>
       <GlobalStyles
@@ -23,16 +27,23 @@ export function MainLayout(): JSX.Element {
       />
       <Toolbar sx={{ gridArea: "1 / 2 / 2 / -1" }} />
 
-      <Sidebar sx={{ gridArea: "1 / 1 / -1 / 2" }} />
-      <Logo sx={{ gridArea: "1 / 1 / 2 / 2", zIndex: 100 }} />
+      <Sidebar sx={{ gridArea: "1 / 1 / -1 / 2" }} openSidebar={openSidebar} />
+      <Logo
+        sx={{ gridArea: "1 / 1 / 2 / 2", zIndex: 100 }}
+        openSidebar={openSidebar}
+        setOpenSidebar={setOpenSidebar}
+      />
 
       <Box sx={{ gridArea: "1 / 2 / -1 / -1", pt: "60px" }}>
         <Suspense>
-          <Outlet />
+          <Outlet context={{ openSidebar } satisfies ContextType} />
         </Suspense>
       </Box>
     </Fragment>
   );
+}
+export function useOutetContext() {
+  return useOutletContext<ContextType>();
 }
 
 /**
@@ -51,10 +62,6 @@ export function BaseLayout(): JSX.Element {
           },
         }}
       />
-
-      <Box sx={{ gridArea: "1 / 1 / 2 / 2 " }}>
-        <Logo />
-      </Box>
 
       <Box sx={{ gridArea: "1 / 1 / -1 / -1", pt: "60px" }}>
         <Suspense>

@@ -1,10 +1,8 @@
 import { BrightnessAutoRounded } from "@mui/icons-material";
 import { Box, BoxProps, IconButton, Typography } from "@mui/joy";
-import { Link } from "react-router-dom";
 
 export function Logo(props: LogoProps): JSX.Element {
-  const { sx, ...other } = props;
-
+  const { sx, openSidebar, setOpenSidebar, ...other } = props;
   return (
     <Box
       sx={{
@@ -17,14 +15,24 @@ export function Logo(props: LogoProps): JSX.Element {
       }}
       {...other}
     >
-      <IconButton component={Link} to="/" color="primary" variant="soft">
+      <IconButton
+        color="primary"
+        variant="soft"
+        onClick={() => setOpenSidebar(!openSidebar)}
+      >
         <BrightnessAutoRounded />
       </IconButton>
-      <Typography sx={{ fontSize: "1.25rem" }} level="h4" component="div">
-        {import.meta.env.VITE_APP_NAME}
-      </Typography>
+      {openSidebar ? (
+        <Typography sx={{ fontSize: "1.25rem" }} level="h4" component="div">
+          {import.meta.env.VITE_APP_NAME}
+        </Typography>
+      ) : null}
     </Box>
   );
 }
 
-export type LogoProps = Omit<BoxProps, "children">;
+export type LogoProps = {
+  sx: Omit<BoxProps, "children">;
+  openSidebar: boolean;
+  setOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+};

@@ -1,10 +1,7 @@
-import { NotificationsRounded } from "@mui/icons-material";
-import { Box, BoxProps, Button, IconButton } from "@mui/joy";
+import { Box, BoxProps } from "@mui/joy";
 import { Fragment, Suspense } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { useCurrentUser } from "../core/auth";
+import { useLocation } from "react-router-dom";
 import { ColorSchemeButton } from "./button-color-scheme";
-import { UserAvatarButton } from "./button-user-avatar";
 import DropDownButton from "./DropDownButton/DropDownButton";
 
 export type TPageSectionLinks = {
@@ -64,23 +61,9 @@ export function Toolbar(props: ToolbarProps): JSX.Element {
 }
 
 function ActionButtons(): JSX.Element {
-  const user = useCurrentUser();
-
   return (
     <Fragment>
       <ColorSchemeButton variant="soft" size="sm" />
-
-      <IconButton variant="soft" size="sm">
-        <NotificationsRounded />
-      </IconButton>
-
-      {user ? (
-        <UserAvatarButton variant="soft" />
-      ) : (
-        <Button component={Link} size="sm" to="/login">
-          Sign In
-        </Button>
-      )}
     </Fragment>
   );
 }

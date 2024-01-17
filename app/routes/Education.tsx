@@ -11,6 +11,7 @@ import CollapsibleList from "../components/CollapsableList/CollapsableList";
 import { educationData, educationDates } from "../data/education-data";
 import MarksCard from "../components/MarksCard/MarksCard";
 import SakuraCanvas from "../animations/SakuraCanvas";
+import { useOutetContext } from "../components";
 
 export enum EEducationInstitution {
   RCCIIT = "rcciit",
@@ -18,6 +19,8 @@ export enum EEducationInstitution {
   BidhanNagarMunicipalSchool = "bidhannagarmunicipalschool",
 }
 export const Component = function Education(): JSX.Element {
+  const { openSidebar } = useOutetContext();
+
   usePageEffect({ title: "Education" });
   const navigate = useNavigate();
   const { hash } = useLocation();
@@ -80,7 +83,7 @@ export const Component = function Education(): JSX.Element {
       sx={{ py: 2, maxHeight: "90vh", overflow: "auto" }}
       ref={containerRef}
     >
-      <SakuraCanvas />
+      <SakuraCanvas openSidebar={openSidebar} />
 
       <Typography id={"education"} sx={{ mb: 4 }} level="h1" gutterBottom>
         Education

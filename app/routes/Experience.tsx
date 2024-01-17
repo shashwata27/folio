@@ -18,6 +18,7 @@ import SectionSubHeading from "../components/CustomTypographies/SectionSubHeadin
 import SectionHeading from "../components/CustomTypographies/SectionHeading/SectionHeading";
 import { debounce } from "@mui/material";
 import SakuraCanvas from "../animations/SakuraCanvas";
+import { useOutetContext } from "../components";
 
 enum EExperienceCompanies {
   Thoughtworks = "thoughtworks",
@@ -26,6 +27,7 @@ enum EExperienceCompanies {
   ZeroDollarSecurity = "zerodollarsecurity",
 }
 export const Component = function Experience(): JSX.Element {
+  const { openSidebar } = useOutetContext();
   usePageEffect({ title: "Experience" });
   const navigate = useNavigate();
   const { hash } = useLocation();
@@ -88,7 +90,7 @@ export const Component = function Experience(): JSX.Element {
       sx={{ py: 2, maxHeight: "90vh", overflow: "auto" }}
       ref={containerRef}
     >
-      <SakuraCanvas />
+      <SakuraCanvas openSidebar={openSidebar} />
       <Typography id={"experience"} sx={{ mb: 4 }} level="h1" gutterBottom>
         Experience
       </Typography>
