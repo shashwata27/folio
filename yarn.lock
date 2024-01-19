@@ -2878,6 +2878,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     react-router-dom: "npm:^6.20.1"
     typescript: "npm:~5.3.2"
+    use-count-up: "npm:^3.0.1"
     vite: "npm:~5.0.4"
     vitest: "npm:~0.34.6"
   languageName: unknown
@@ -8563,6 +8564,26 @@ __metadata:
   version: 4.0.3
   resolution: "urlpattern-polyfill@npm:4.0.3"
   checksum: e456b5075afdf84a625b2cc17506b683cfa0639b74b0874cfb0b8dba3fc5c4c1fa7698ef253c32658ee3b5fe4cfdad1c58b595be4c3fe59949d15cdaf171dbbf
+  languageName: node
+  linkType: hard
+
+"use-count-up@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "use-count-up@npm:3.0.1"
+  dependencies:
+    use-elapsed-time: "npm:3.0.2"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: aaa54c3815d1b92174286b32300dca94fc6c6563cd56efee41ae186745f0e892781f18bb6a741f992ce89177a97e912611945252235d0f63e7efd0438eaf5919
+  languageName: node
+  linkType: hard
+
+"use-elapsed-time@npm:3.0.2":
+  version: 3.0.2
+  resolution: "use-elapsed-time@npm:3.0.2"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 432d0979096c71f4035b8132f3405c721c40b3af342896920844b6426add45b026e72cd5e15ca2b9ca5f2b3804a99a2bcc656c51e84460f907b45d3e7fae64ae
   languageName: node
   linkType: hard
 

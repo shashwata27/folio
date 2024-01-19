@@ -1,20 +1,19 @@
 import { CircularProgress, Typography } from "@mui/joy";
-// import { useCountUp } from "use-count-up";
+import { useCountUp } from "use-count-up";
 
 const DonutChart = ({ value }: { value: number }) => {
-  // const { value: value2 } = useCountUp({
-  //   isCounting: true,
-  //   duration: 1,
-  //   start: 0,
-  //   end: value,
-  // });
+  const { value: value2 } = useCountUp({
+    isCounting: true,
+    duration: 1,
+    start: 0,
+    end: value,
+  });
 
   return (
     <CircularProgress
       size="lg"
       determinate
-      // value={value2 as number}
-      value={value}
+      value={value2 as number}
       sx={{
         "--CircularProgress-size": "120px",
         "--CircularProgress-progressThickness": "14px",
@@ -23,10 +22,7 @@ const DonutChart = ({ value }: { value: number }) => {
         "--CircularProgress-trackColor": "#ff0000",
       }}
     >
-      <Typography>
-        {/*{value2 as number}%*/}
-        {value}
-      </Typography>
+      <Typography>{value2 as number}%</Typography>
     </CircularProgress>
   );
 };
