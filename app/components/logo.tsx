@@ -1,8 +1,11 @@
-import { BrightnessAutoRounded } from "@mui/icons-material";
+import { LunchDining } from "@mui/icons-material";
+import burgerIcon from "../public/burgerIcon.png";
 import { Box, BoxProps, IconButton, Typography } from "@mui/joy";
+import { useState } from "react";
 
 export function Logo(props: LogoProps): JSX.Element {
   const { sx, openSidebar, setOpenSidebar, ...other } = props;
+  const [burgerLoaded, setBurgerLoaded] = useState(false);
   return (
     <Box
       sx={{
@@ -20,7 +23,13 @@ export function Logo(props: LogoProps): JSX.Element {
         variant="soft"
         onClick={() => setOpenSidebar(!openSidebar)}
       >
-        <BrightnessAutoRounded />
+        <img
+          src={burgerIcon}
+          style={{ height: "30px", width: "30px" }}
+          alt="burger-icon"
+          onLoad={() => setBurgerLoaded(true)}
+        />
+        {burgerLoaded ? null : <LunchDining />}
       </IconButton>
       {openSidebar ? (
         <Typography sx={{ fontSize: "1.25rem" }} level="h4" component="div">

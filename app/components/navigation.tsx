@@ -3,7 +3,10 @@ import {
   WorkHistory,
   SchoolRounded,
   WorkspacePremium,
+  LinkedIn,
+  GitHub,
 } from "@mui/icons-material";
+
 import {
   List,
   ListItem,
@@ -21,37 +24,65 @@ export const Navigation = memo(function Navigation(
   const { sx, openSidebar, ...other } = props;
 
   return (
-    <List
-      sx={{ "--ListItem-radius": "4px", ...sx }}
-      size="sm"
-      role="navigation"
-      {...other}
+    <div
+      style={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}
     >
-      <NavItem
-        path="/introduction"
-        label="Introduction"
-        icon={<AssignmentInd />}
-        openSidebar={openSidebar}
-      />
-      <NavItem
-        path="/experience"
-        label="Experience"
-        icon={<WorkHistory />}
-        openSidebar={openSidebar}
-      />
-      <NavItem
-        path="/education"
-        label="Education"
-        icon={<SchoolRounded />}
-        openSidebar={openSidebar}
-      />
-      <NavItem
-        path="/skills-and-certificates"
-        label="Skills & Certs"
-        icon={<WorkspacePremium />}
-        openSidebar={openSidebar}
-      />
-    </List>
+      <List
+        sx={{ "--ListItem-radius": "4px", ...sx }}
+        size="sm"
+        role="navigation"
+        {...other}
+      >
+        <NavItem
+          path="/introduction"
+          label="Introduction"
+          icon={<AssignmentInd />}
+          openSidebar={openSidebar}
+        />
+        <NavItem
+          path="/experience"
+          label="Experience"
+          icon={<WorkHistory />}
+          openSidebar={openSidebar}
+        />
+        <NavItem
+          path="/education"
+          label="Education"
+          icon={<SchoolRounded />}
+          openSidebar={openSidebar}
+        />
+        <NavItem
+          path="/skills-and-certificates"
+          label="Skills & Certs"
+          icon={<WorkspacePremium />}
+          openSidebar={openSidebar}
+        />
+      </List>
+      <List
+        sx={{ "--ListItem-radius": "4px", justifyContent: "flex-end", ...sx }}
+        size="sm"
+        role="navigation"
+        {...other}
+      >
+        <NavItem
+          path="https://www.linkedin.com/in/shashwatasaha27/"
+          label="LinkedIn"
+          icon={<LinkedIn />}
+          openSidebar={openSidebar}
+        />
+        <NavItem
+          path="https://github.com/shashwata27"
+          label="GitHub"
+          icon={<GitHub />}
+          openSidebar={openSidebar}
+        />
+      </List>
+    </div>
   );
 });
 
