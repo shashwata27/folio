@@ -3,15 +3,19 @@ import { usePageEffect } from "../core/page";
 
 import SakuraCanvas from "../animations/SakuraCanvas";
 import { useOutetContext } from "../components";
+import { useLocationToScroll } from "../core/useLocationToScroll";
 
 export const Component = function Introduction(): JSX.Element {
   const { openSidebar } = useOutetContext();
+  const baseURI = "introduction";
+
   usePageEffect({ title: "Introduction" });
+  useLocationToScroll(baseURI);
 
   return (
     <Container sx={{ py: 2, overflow: "hidden" }}>
       <SakuraCanvas openSidebar={openSidebar} />
-      <Typography sx={{ mb: 4 }} level="h1">
+      <Typography id={baseURI} sx={{ mb: 4 }} level="h1">
         Introduction
       </Typography>
 

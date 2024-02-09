@@ -33,11 +33,7 @@ export const Component = function Education(): JSX.Element {
         Education
       </Typography>
 
-      <section
-        id={EEducationInstitution.RCCIIT}
-        style={{ height: "0px" }}
-      ></section>
-      <section style={{ minHeight: "50vh" }}>
+      <section id={EEducationInstitution.RCCIIT} style={{ minHeight: "50vh" }}>
         <a href={`#${EEducationInstitution.RCCIIT}`}>
           <SectionHeading title="RCCIIT" />
         </a>
