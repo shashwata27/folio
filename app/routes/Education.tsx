@@ -1,8 +1,7 @@
 import { Card, Stepper, Typography } from "@mui/joy";
 import { usePageEffect } from "../core/page";
 import StyledStep from "../components/StyledStep/StyledStep";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+
 import SectionSubHeading from "../components/CustomTypographies/SectionSubHeading/SectionSubHeading";
 import SectionHeading from "../components/CustomTypographies/SectionHeading/SectionHeading";
 
@@ -12,6 +11,7 @@ import MarksCard from "../components/MarksCard/MarksCard";
 import SakuraCanvas from "../animations/SakuraCanvas";
 import { useOutetContext } from "../components";
 import AutoScrollContainer from "../components/AutoScrollContainer/AutoScrollContainer";
+import { useLocationToScroll } from "../core/useLocationToScroll";
 
 export enum EEducationInstitution {
   RCCIIT = "rcciit",
@@ -20,22 +20,10 @@ export enum EEducationInstitution {
 }
 export const Component = function Education(): JSX.Element {
   const { openSidebar } = useOutetContext();
-
-  usePageEffect({ title: "Education" });
   const baseURI = "education";
 
-  const { hash } = useLocation();
-
-  useEffect(() => {
-    if (hash) {
-      const targetElement = document.querySelector(hash);
-      targetElement!.scrollIntoView({ behavior: "smooth" });
-    } else {
-      document
-        .querySelector("#education")!
-        .scrollIntoView({ behavior: "smooth" });
-    }
-  }, [hash]);
+  usePageEffect({ title: "Education" });
+  useLocationToScroll(baseURI);
 
   return (
     <AutoScrollContainer baseURI={baseURI}>

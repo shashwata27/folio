@@ -12,14 +12,13 @@ import {
   zeroDollarSecurityExperienceDatesData,
 } from "../data/experience-data";
 import StyledStep from "../components/StyledStep/StyledStep";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import SectionSubHeading from "../components/CustomTypographies/SectionSubHeading/SectionSubHeading";
 import SectionHeading from "../components/CustomTypographies/SectionHeading/SectionHeading";
 
 import SakuraCanvas from "../animations/SakuraCanvas";
 import { useOutetContext } from "../components";
 import AutoScrollContainer from "../components/AutoScrollContainer/AutoScrollContainer";
+import { useLocationToScroll } from "../core/useLocationToScroll";
 
 enum EExperienceCompanies {
   Thoughtworks = "thoughtworks",
@@ -29,21 +28,10 @@ enum EExperienceCompanies {
 }
 export const Component = function Experience(): JSX.Element {
   const { openSidebar } = useOutetContext();
-  usePageEffect({ title: "Experience" });
   const baseURI = "experience";
 
-  const { hash } = useLocation();
-
-  useEffect(() => {
-    if (hash) {
-      const targetElement = document.querySelector(hash);
-      targetElement!.scrollIntoView({ behavior: "smooth" });
-    } else {
-      document
-        .querySelector("#experience")!
-        .scrollIntoView({ behavior: "smooth" });
-    }
-  }, [hash]);
+  usePageEffect({ title: "Experience" });
+  useLocationToScroll(baseURI);
 
   return (
     <AutoScrollContainer baseURI={baseURI}>
