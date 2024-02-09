@@ -11,7 +11,7 @@ export type TSkillGroup =
   | "Framework"
   | "Database"
   | "Tool"
-  | "Technology"
+  | "Cloud"
   | "Soft Skill";
 
 export const Component = function SkillsAndCerts(): JSX.Element {

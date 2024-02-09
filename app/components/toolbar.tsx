@@ -13,7 +13,7 @@ type TRouteLinks = {
 };
 
 const handleResumeDownload = () => {
-  const fileId = "1YxydHrZNU0wo3cn9SWYOFG23Bp8tFI1e";
+  const fileId = "1pcsYxNJZDNRkIjTYb5syvL9FPBgO_a-R";
   const downloadLink = `https://drive.google.com/uc?export=download&id=${fileId}`;
   window.open(downloadLink, "_blank");
 };

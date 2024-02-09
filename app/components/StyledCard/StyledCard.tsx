@@ -7,7 +7,7 @@ const groupColors: TGroupColors = {
   Framework: "rgba(0,128,255,0.4)",
   Database: "rgba(101,101,101,0.4)",
   Tool: "rgba(55,255,0,0.4)",
-  Technology: "rgba(248,0,255,0.4)",
+  Cloud: "rgba(248,0,255,0.4)",
   "Soft Skill": "rgba(255,0,8,0.4)",
 };
 
