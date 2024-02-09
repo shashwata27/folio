@@ -1,4 +1,4 @@
-import { Card, Container, Stepper, Typography } from "@mui/joy";
+import { Card, Stepper, Typography } from "@mui/joy";
 import { usePageEffect } from "../core/page";
 import CollapsibleList from "../components/CollapsableList/CollapsableList";
 import {
@@ -12,13 +12,14 @@ import {
   zeroDollarSecurityExperienceDatesData,
 } from "../data/experience-data";
 import StyledStep from "../components/StyledStep/StyledStep";
-import { useEffect, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import SectionSubHeading from "../components/CustomTypographies/SectionSubHeading/SectionSubHeading";
 import SectionHeading from "../components/CustomTypographies/SectionHeading/SectionHeading";
-import { debounce } from "@mui/material";
+
 import SakuraCanvas from "../animations/SakuraCanvas";
 import { useOutetContext } from "../components";
+import AutoScrollContainer from "../components/AutoScrollContainer/AutoScrollContainer";
 
 enum EExperienceCompanies {
   Thoughtworks = "thoughtworks",
@@ -29,50 +30,9 @@ enum EExperienceCompanies {
 export const Component = function Experience(): JSX.Element {
   const { openSidebar } = useOutetContext();
   usePageEffect({ title: "Experience" });
-  const navigate = useNavigate();
+  const baseURI = "experience";
+
   const { hash } = useLocation();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const initialRender = useRef(true);
-
-  const debouncedNavigate = debounce((id: string) => {
-    // ensure only one navigate call will be made in 10ms
-    navigate(`/experience#${id}`);
-  }, 500);
-
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.9, // Adjust the threshold as needed
-    };
-
-    const callback: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute("id");
-          if (id && !initialRender.current) {
-            debouncedNavigate(id);
-          }
-          initialRender.current = false;
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(callback, options);
-
-    if (containerRef.current) {
-      // Observe each section with the specified class
-      containerRef.current
-        .querySelectorAll("section[id]")
-        .forEach((section) => {
-          observer.observe(section);
-        });
-    }
-
-    return () => {
-      observer.disconnect(); // Cleanup when component unmounts
-    };
-  }, [navigate]);
 
   useEffect(() => {
     if (hash) {
@@ -86,12 +46,9 @@ export const Component = function Experience(): JSX.Element {
   }, [hash]);
 
   return (
-    <Container
-      sx={{ py: 2, maxHeight: "90vh", overflow: "auto" }}
-      ref={containerRef}
-    >
+    <AutoScrollContainer baseURI={baseURI}>
       <SakuraCanvas openSidebar={openSidebar} />
-      <Typography id={"experience"} sx={{ mb: 4 }} level="h1" gutterBottom>
+      <Typography id={baseURI} sx={{ mb: 4 }} level="h1" gutterBottom>
         Experience
       </Typography>
 
@@ -220,6 +177,6 @@ export const Component = function Experience(): JSX.Element {
           </StyledStep>
         </Stepper>
       </section>
-    </Container>
+    </AutoScrollContainer>
   );
 };
