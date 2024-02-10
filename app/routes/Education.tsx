@@ -25,6 +25,7 @@ export const Component = function Education(): JSX.Element {
   usePageEffect({ title: "Education" });
   useLocationToScroll(baseURI);
 
+  const minHeightStyle = { minHeight: "40vh" };
   return (
     <AutoScrollContainer baseURI={baseURI}>
       <SakuraCanvas openSidebar={openSidebar} />
@@ -33,11 +34,11 @@ export const Component = function Education(): JSX.Element {
         Education
       </Typography>
 
-      <section id={EEducationInstitution.RCCIIT} style={{ minHeight: "50vh" }}>
+      <section id={EEducationInstitution.RCCIIT} style={minHeightStyle}>
         <a href={`#${EEducationInstitution.RCCIIT}`}>
           <SectionHeading title="RCCIIT" />
         </a>
-        <Stepper orientation={"vertical"} sx={{ minHeight: "50vh" }}>
+        <Stepper orientation={"vertical"} sx={minHeightStyle}>
           <StyledStep indicatorDates={educationDates["RCCIIT"]}>
             <SectionSubHeading>
               B.Tech Degree in Electronics & Communication Stream
@@ -55,7 +56,7 @@ export const Component = function Education(): JSX.Element {
 
       <section
         id={EEducationInstitution.BidhanNagarMunicipalHighSchool}
-        style={{ minHeight: "50vh" }}
+        style={minHeightStyle}
       >
         <a href={`#${EEducationInstitution.BidhanNagarMunicipalHighSchool}`}>
           <SectionHeading
@@ -63,7 +64,7 @@ export const Component = function Education(): JSX.Element {
             needMarginTop
           />
         </a>
-        <Stepper orientation={"vertical"} sx={{ minHeight: "50vh" }}>
+        <Stepper orientation={"vertical"} sx={minHeightStyle}>
           <StyledStep
             indicatorDates={educationDates["BidhanNagarMunicipalHighSchool"]}
           >
@@ -81,12 +82,12 @@ export const Component = function Education(): JSX.Element {
 
       <section
         id={EEducationInstitution.BidhanNagarMunicipalSchool}
-        style={{ minHeight: "50vh" }}
+        style={minHeightStyle}
       >
         <a href={`#${EEducationInstitution.BidhanNagarMunicipalSchool}`}>
           <SectionHeading title="BidhanNagarMunicipalSchool" needMarginTop />
         </a>
-        <Stepper orientation={"vertical"} sx={{ minHeight: "50vh" }}>
+        <Stepper orientation={"vertical"} sx={minHeightStyle}>
           <StyledStep
             indicatorDates={educationDates["BidhanNagarMunicipalSchool"]}
           >
